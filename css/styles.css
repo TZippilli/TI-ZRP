@@ -1,5 +1,6 @@
 .container{
     background-color: #11103d;
+    background-repeat: repeat-x;
     color:white;
 }
 
@@ -29,7 +30,6 @@ width: 20%;
 padding-left: 345px;
 padding-top: 100px;
 }
-
 .search input[type=text] {
 float: right;
 padding: 6px;
@@ -45,7 +45,7 @@ height: 35px;
 text-align: center;
 padding-top: 15px; 
 font-size: 15px;  
-margin-top: 500px;
+margin-top: 230px;
 }
 
 .topnav {
@@ -56,7 +56,6 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 }
-
 .topnav a {
 float: left;
 color: white;
@@ -67,13 +66,11 @@ font-size: 17px;
 font-family: 'Exo 2', sans-serif;
 font-family: 'Raleway', sans-serif;
 }
-
 .topnav a:hover {
 background-color: #11103d;
 color: rgb(255, 255, 255);
 font-size: 20px;
 }
-
 .topnav a.active {
 background-color: #11103d;
 color: white;
@@ -99,7 +96,6 @@ color: white;
     font-family: 'Exo 2', sans-serif;
     font-family: 'Raleway', sans-serif;
 }
-
 .peliculas img{
     width: 170px;
     height: 230px;
@@ -113,5 +109,14 @@ color: white;
     padding-top: 200px;
 }
 .tercer {
+    padding-top: 200px;
+}
+.cuarto {
+    padding-top: 200px;
+}
+.quinto {
+    padding-top: 200px;
+}
+.sexto {
     padding-top: 200px;
 }
