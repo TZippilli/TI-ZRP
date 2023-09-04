@@ -91,13 +91,11 @@ color: white;
     background-color: #11103d;
     max-width: 100vw;
     height: 110px;
-    margin-bottom: 15px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;  
     justify-content: space-around;
     align-items: center;
-    padding-top: 15px;
     font-family: 'Exo 2', sans-serif;
     font-family: 'Raleway', sans-serif;
 }
@@ -112,5 +110,8 @@ color: white;
 }
 
 .segundo {
+    padding-top: 200px;
+}
+.tercer {
     padding-top: 200px;
 }
