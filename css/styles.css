@@ -52,7 +52,7 @@ margin-top: 230px;
 width: 100vw;
 align-items: center;
 text-align: center;
-display: flex;
+display: flex; 
 flex-direction: row;
 justify-content: center;
 }
