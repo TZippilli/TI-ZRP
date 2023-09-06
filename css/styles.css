@@ -1,8 +1,9 @@
 .container{
-    background-color: #11103d;
-    background-repeat: repeat-x;
-    color:white;
+    background-image: url("../images/background.png");
+    background-repeat: repeat;
+    color: white;
 }
+  
 
 .superior{
 max-width: 100vw;
@@ -11,20 +12,21 @@ margin-bottom: 15px;
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
+padding-top: 15px;
 }
 .superior img{
+border: white 2px solid;
 width: 9%;
 height: 120px;
-padding-top: 10px;
 align-items: center;
 justify-content: center;
 text-align: center;
-margin-left: 46.5%;
+margin-left: 46%;
 
 }
 
 .search {
-background-color: #11103d;
+
 justify-content: flex-end;
 width: 20%;
 padding-left: 345px;
@@ -67,12 +69,10 @@ font-family: 'Exo 2', sans-serif;
 font-family: 'Raleway', sans-serif;
 }
 .topnav a:hover {
-background-color: #11103d;
 color: rgb(255, 255, 255);
 font-size: 20px;
 }
 .topnav a.active {
-background-color: #11103d;
 color: white;
 }
 
@@ -85,7 +85,6 @@ color: white;
     font-family: 'Raleway', sans-serif;
 }
 .peliculas{
-    background-color: #11103d;
     max-width: 100vw;
     height: 110px;
     display: flex;
@@ -114,19 +113,10 @@ color: white;
 .cuarto {
     padding-top: 200px;
 }
-.quinto {
-    padding-top: 200px;
-}
-.sexto {
-    padding-top: 200px;
-}
-.septimo{
-    padding-top: 200px; 
-}
+
 
 @media (max-width:390px){
    .container{
-    background-color: #11103d;
     color:white;
 }
 
@@ -150,7 +140,6 @@ margin-left: 40.5%;
 }
 
 .search {
-background-color: #11103d;
 justify-content: flex-end;
 width: 15%;
 padding-left: 300px;
@@ -195,12 +184,10 @@ font-family: 'Exo 2', sans-serif;
 font-family: 'Raleway', sans-serif;
 }
 .topnav a:hover {
-background-color: #11103d;
 color: rgb(255, 255, 255);
 font-size: 20px;
 }
 .topnav a.active {
-background-color: #11103d;
 color: white;
 }
 
@@ -213,7 +200,6 @@ color: white;
     font-family: 'Raleway', sans-serif;
 }
 .peliculas{
-    background-color: #11103d;
     max-width: 100vw;
     height: 110px;
     display: flex;
@@ -239,16 +225,5 @@ color: white;
 .tercer {
     padding-top: 900px;
 }
-.cuarto {
-    padding-top: 900px;
-}
-.quinto {
-    padding-top: 900px;
-}
-.sexto {
-    padding-top: 900px;
-}
-.septimo {
-    padding-top: 900px;
-}
+
 }
