@@ -27,15 +27,10 @@ border: white 2px solid;
 width: 8,5%;
 height: 120px;
 align-items: center;
-justify-content: center;
-text-align: center;
 margin-left: 46%;
-
 }
-
 .search {
-align-self: flex-end;
-width: 20%;
+align-items: flex-end;
 }
 .search input[type=text] {
 background-color: rgba(25, 4, 107, 0.496);
@@ -113,17 +108,12 @@ color: white;
     width: 180px;
     height: 240px;
 }
-
 .segundo {
     padding-top: 200px;
 }
 .tercer {
     padding-top: 200px;
 }
-.cuarto {
-    padding-top: 200px;
-}
-
 
 @media (max-width:390px){
    .container{

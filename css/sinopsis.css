@@ -20,12 +20,8 @@ padding-top: 15px;
     text-align: center;
     margin-left: 46%;
 }
-
 .search {
-justify-content: flex-end;
 width: 20%;
-padding-left: 345px;
-padding-top: 100px;
 }
 .search input[type=text] {
 float: right;
