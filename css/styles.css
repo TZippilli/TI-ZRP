@@ -34,18 +34,19 @@ margin-left: 46%;
 }
 
 .search {
-
-justify-content: flex-end;
+align-self: flex-end;
 width: 20%;
-padding-left: 1175px;
 }
 .search input[type=text] {
+background-color: rgba(25, 4, 107, 0.496);
 float: right;
 padding: 6px;
 border: none;
 margin-top: 8px;
 margin-right: 16px;
 font-size: 15px;
+border: grey 1px solid;
+color: white;
 }
 
 .inferior{
