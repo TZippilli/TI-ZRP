@@ -106,6 +106,8 @@ color: white;
 .peliculas img{
     width: 170px;
     height: 230px;
+    border: white 1px solid;
+    border-radius: 5px;
 }
 .peliculas img:hover{
     width: 180px;
