@@ -31,6 +31,7 @@ margin-left: 46%;
 }
 .search {
 align-items: flex-end;
+padding-left: 100px;
 }
 .search input[type=text] {
 background-color: rgba(25, 4, 107, 0.496);
@@ -209,10 +210,13 @@ color: white;
     align-items: center;
     font-family: 'Exo 2', sans-serif;
     font-family: 'Raleway', sans-serif;
+    
+   
 }
 .peliculas img{
     width: 170px;
     height: 230px;
+
 }
 .peliculas img:hover{
     width: 180px;
@@ -222,8 +226,9 @@ color: white;
 .segundo {
     padding-top: 900px;
 }
-.tercer {
+.tercer{
     padding-top: 900px;
 }
 
 }
+

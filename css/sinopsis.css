@@ -1,5 +1,6 @@
 .container{
 background-image: url("../images/background.png");
+
 }
 
 .superior{
@@ -18,10 +19,12 @@ padding-top: 15px;
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-left: 46%;
+    margin-left: 45%;
+   
 }
 .search {
 width: 20%;
+padding-left: 200px;
 }
 .search input[type=text] {
 float: right;
@@ -39,7 +42,9 @@ padding-top: 200px;
 font-size: 15px;  
 margin-top: 230px;
 align-items: center;
-padding-left: 675px;
+padding-left: 480px;
+color: white;
+
 }
 
 .topnav {
@@ -66,4 +71,15 @@ font-size: 20px;
 }
 .topnav a.active {
 color: white;
+}
+
+.imageavengers{
+    height: 200px
+    
+    
+}
+
+.videoavengers{
+    padding-top: 100px;
+    padding-left: 300px;
 }

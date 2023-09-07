@@ -31,6 +31,7 @@ margin-left: 46%;
 }
 .search {
 align-items: flex-end;
+padding-left: 100px;
 }
 .search input[type=text] {
 background-color: rgba(25, 4, 107, 0.496);
