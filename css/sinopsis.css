@@ -27,6 +27,8 @@ width: 20%;
 padding-left: 200px;
 }
 .search input[type=text] {
+background-color: rgba(25, 4, 107, 0.496);
+border: grey 1px solid;
 float: right;
 padding: 6px;
 border: none;
@@ -42,7 +44,7 @@ padding-top: 200px;
 font-size: 15px;  
 margin-top: 230px;
 align-items: center;
-padding-left: 480px;
+padding-left: 550px;
 color: white;
 
 }
@@ -73,15 +75,19 @@ font-size: 20px;
 color: white;
 }
 
-.imageavengers img{
-    height: 300px
-    
-    
+.avengers{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 20px;
 }
-
-.videoavengers img{
-    padding-top: 100px;
+.imageavengers img{
+    height: 300px;
+}
+.imageavengers{
+    padding-left: 40px;
+}
+.videoavengers video{
     padding-left: 500px;
-    width: 100px;
-    height: 200px;
+    padding-bottom: 50px;
 }
