@@ -73,13 +73,15 @@ font-size: 20px;
 color: white;
 }
 
-.imageavengers{
-    height: 200px
+.imageavengers img{
+    height: 300px
     
     
 }
 
-.videoavengers{
+.videoavengers img{
     padding-top: 100px;
-    padding-left: 300px;
+    padding-left: 500px;
+    width: 100px;
+    height: 200px;
 }
