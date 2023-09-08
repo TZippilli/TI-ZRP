@@ -54,7 +54,7 @@ height: 35px;
 text-align: center;
 padding-top: 15px; 
 font-size: 15px;  
-margin-top: 230px;
+margin-top: 630px;
 }
 
 .topnav {
@@ -129,6 +129,9 @@ color: white;
     flex-direction: row;
     flex-wrap: wrap;
     padding-top: 20px;
+    background-image: url("../images/background.png");
+    background-repeat: repeat;
+    padding-left: 20px;
 }
 .imageavengers img{
     height: 300px;
@@ -147,6 +150,7 @@ color: white;
 .generos a:hover{
     font-size: 35px;
 }
+
 
 
 
