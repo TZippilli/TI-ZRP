@@ -1,7 +1,7 @@
 header{
     display: flex;
     flex-direction: column;
-
+    justify-content: center;
 }
 header .logo img{
     width: 200px;
