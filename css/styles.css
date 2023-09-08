@@ -115,6 +115,46 @@ color: white;
 .tercer {
     padding-top: 200px;
 }
+.comedy{
+    color: white;
+}
+
+
+
+.avengerssinopsis{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+.imageavengers img{
+    height: 300px;
+}
+.imageavengers{
+    padding-left: 40px;
+}
+.videoavengers video{
+    padding-left: 500px;
+    padding-bottom: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width:390px){
    .container{
@@ -233,4 +273,5 @@ color: white;
     padding-top: 500px;
 }
 }
+
 
