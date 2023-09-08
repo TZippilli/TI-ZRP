@@ -1,3 +1,31 @@
+header{
+    display: flex;
+    flex-direction: column;
+
+}
+header .logo img{
+    width: 200px;
+}
+header .prueba{
+    display: flex;
+}
+header nav ul{
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .container{
     background-image: url("../images/background.png");
     background-repeat: repeat;
@@ -135,14 +163,14 @@ color: white;
 }
 .imageavengers img{
     height: 300px;
+    align-items: flex-start;
+    justify-self: flex-start;
+
 }
 .imageavengers{
     padding-left: 40px;
 }
-.videoavengers video{
-    padding-left: 500px;
-    padding-bottom: 50px;
-} 
+
 .generos a{
     color: white;
     font-size: 30px;
