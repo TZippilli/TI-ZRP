@@ -15,7 +15,7 @@ header .topnav{
 }
 header nav ul{
     display: flex;
-    color: white
+    color:white;   
 }
 
 .topnav {
@@ -43,7 +43,9 @@ header nav ul{
     color: white;
     }
 
+ 
 
+   
 
 
 
@@ -91,18 +93,20 @@ margin-left: 46%;
 }
 .search {
 align-items: flex-end;
-padding-left: 100px;
+justify-content: flex-end;
+align-self: flex-end;
+
 }
 .search input[type=text] {
 background-color: rgba(25, 4, 107, 0.496);
 float: right;
-padding: 6px;
 border: none;
 margin-top: 8px;
 margin-right: 16px;
 font-size: 15px;
 border: grey 1px solid;
 color: white;
+height: 25px;
 }
 
 .inferior{
