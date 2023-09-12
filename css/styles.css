@@ -1,7 +1,7 @@
 header{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding-top: 10px;
 
@@ -12,20 +12,25 @@ header .logo img{
 }
 header .topnav{
     display: flex;
+    justify-content: space-between;
 }
 header nav ul{
     display: flex;
-    color:white;   
+    color:white;  
+    flex-direction: row;
+    justify-content: space-between;
+
 }
 
 .topnav {
-    width: 100vw;
+    width: 40vw;
     align-items: center;
     text-align: center;
     display: flex; 
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     }
+    
     .topnav a {
     float: left;
     color: white;
