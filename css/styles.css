@@ -167,15 +167,21 @@ a:active {
 }
 .textoavengers{
     flex-direction: column;
-    padding-left: 15px;
+    padding-left: 20px;
 }
 
 .imageavengers {
     padding-left: 20px;
 }
 .avengerssinopsis p {
-    padding-left: 15px;
     padding-right: 15px;
+}
+.textoavengers img{
+    width: 80px;
+
+}
+.estrellas{
+    flex-direction: row;
 }
 .generos a {
     color: white;
