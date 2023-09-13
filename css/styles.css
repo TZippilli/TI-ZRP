@@ -136,7 +136,10 @@ a:active {
     border: white 1px solid;
     border-radius: 5px;
 }
-
+.peliculas button img {
+    width: 70px;
+    height: 70px;
+}
 .peliculas img:hover {
     width: 180px;
     height: 240px;
@@ -154,25 +157,26 @@ a:active {
 
 .avengerssinopsis {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     padding-top: 20px;
-    background-image: url("../images/background.png");
-    background-repeat: repeat;
     padding-left: 20px;
 }
 
+
 .imageavengers img {
     height: 300px;
-    align-items: flex-start;
-    justify-self: flex-start;
-
+}
+.textoavengers{
+    flex-direction: column;
+    padding-left: 15px;
 }
 
 .imageavengers {
-    padding-left: 40px;
+    padding-left: 20px;
 }
-
+.avengerssinopsis p {
+    padding-left: 15px;
+    padding-right: 15px;
+}
 .generos a {
     color: white;
     font-size: 30px;
