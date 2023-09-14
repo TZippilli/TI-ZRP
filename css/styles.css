@@ -178,9 +178,11 @@ a:active {
 }
 .generos a {
     color: white;
-    font-size: 30px;
+    font-size: 25px;
 }
-
+.generos{
+    padding-left: 10px;
+}
 .generos a:hover {
     font-size: 35px;
 }
