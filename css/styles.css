@@ -265,9 +265,6 @@ a:active {
     a:active {
         text-decoration: none;
     }
-    .search {
-    
-    }
     
     .search input[type=text] {
         background-color: rgba(25, 4, 107, 0.496);
@@ -283,9 +280,7 @@ a:active {
         max-width: 100vw;
         height: 60px;
         text-align: center;
-        padding-top: 25px;
         font-size: 12px;
-        margin-top: 220px;
     }
     
     
@@ -301,7 +296,7 @@ a:active {
     
     .peliculas {
         max-width: 100vw;
-        height: 400px;
+        height: 730px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -311,6 +306,7 @@ a:active {
         font-family: 'Raleway', sans-serif;
         font-size: 9px;
     }
+    
     
     .peliculas img {
         width: 100px;
@@ -366,7 +362,7 @@ a:active {
     .generos a:hover {
         font-size: 25px;
     }
-    
+   
 
 }
 
