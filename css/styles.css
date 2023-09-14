@@ -356,11 +356,15 @@ a:active {
     }
     .generos a {
         color: white;
-        font-size: 30px;
+        font-size: 20px;
+    }
+    .generos {
+        padding-left: 15px;
+        padding-right: 5px;
     }
     
     .generos a:hover {
-        font-size: 35px;
+        font-size: 25px;
     }
     
 
