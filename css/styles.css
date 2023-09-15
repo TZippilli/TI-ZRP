@@ -188,8 +188,12 @@ a:active {
 .generos a:hover {
     font-size: 35px;
 }
-
-
+.buscar input[type=text] {
+    background-color: rgba(25, 4, 107, 0.496);
+    border: solid 1px white ;
+    color: white;
+    height: 17px;
+}
 
 
 

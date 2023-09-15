@@ -28,10 +28,12 @@
                     <li><a href="generos.html">Genres</a></li>
                     <li><a href="favoritos.html">Favourites</a></li>
                 </ul>
-                <form class="search">
-                <input type="text" name="busqueda" placeholder="Search..">
-                <button type="submit" formaction="./resultados.html"></button>   
-                    
+                <form class="buscar" action="resultados.html" method="GET">
+                    <div>
+                        <label for="nombre">Que quieres ver?</label>
+                        <input id="nombre" type="text" name="nombre" value="">
+                    </div>
+                </form>
             </nav>
 
         </header>
