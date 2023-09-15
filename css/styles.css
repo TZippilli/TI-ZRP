@@ -174,8 +174,22 @@ a:active {
     color: white;
     height: 17px;
 }
-
-
+.generos{
+    display: flex;
+    flex-direction: column;
+}
+.generos img{
+width: 170px;
+height: 230px;
+border: white 1px solid;
+border-radius: 5px;
+}
+.generos p{
+    width: 70vw;
+}
+.peliculasgeneros{
+    flex-direction: row;
+}
 
 
 @media (max-width: 320px) {
