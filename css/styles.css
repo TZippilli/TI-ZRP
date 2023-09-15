@@ -79,26 +79,6 @@ a:link {
 a:active {
     text-decoration: none;
 }
-.search {
-    align-items: flex-end;
-    justify-content: flex-end;
-    align-self: flex-end;
-
-}
-
-.search input[type=text] {
-    background-color: rgba(25, 4, 107, 0.496);
-    float: right;
-    border: none;
-    margin-top: 8px;
-    margin-right: 16px;
-    font-size: 15px;
-    border: grey 1px solid;
-    color: white;
-    height: 25px;
-
-}
-
 .inferior {
     max-width: 100vw;
     height: 60px;
