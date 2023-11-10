@@ -21,6 +21,9 @@ header .topnav {
     flex-wrap: wrap;
 }
 
+.buscador{
+    max-width: 500vw;
+}
 header nav ul {
     display: flex;
     color: white;
