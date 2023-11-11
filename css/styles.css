@@ -241,6 +241,26 @@ a:active {
     margin-bottom: 10px;
 }
 
+/* Agrega estilos para las filas y elementos de medios */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px; /* Ajusta según sea necesario */
+}
+
+.mediaItem {
+    flex: 1;
+    max-width: calc(33.333% - 10px); /* Ajusta según sea necesario */
+    margin: 0 5px 10px; /* Ajusta según sea necesario */
+    box-sizing: border-box;
+}
+
+.mediaItem img {
+    width: 170px;
+    height: 230px;
+    border: white 1px solid;
+    border-radius: 5px;
+}
 
 @media (max-width: 420px) {
     header {
