@@ -91,7 +91,12 @@ a:active {
     align-items: center;
     text-align: center;
     font-size: 15px;
-    height: 60px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.nombres {
+    margin-bottom: 15px;
 }
 
 .titulo {
@@ -233,7 +238,7 @@ a:active {
 .inferior img{
     max-width: 350px;
     height: auto;
-    margin-top: 0px;
+    margin-bottom: 10px;
 }
 
 
