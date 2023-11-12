@@ -14,7 +14,7 @@ document.getElementById('movieSearchForm').addEventListener('submit', function (
   fetch(endpointURL)
     .then(response => response.json())
     .then(data => {
-      // Manejar la respuesta de la API (data)
+      // maneja la respuesta de la API (data), alert si no hay resultados
       if (data.results.length === 0) {
         alert("No se encontraron resultados.");
       } else {
@@ -35,7 +35,7 @@ function displayResults(results) {
   results.forEach(movie => {
     const movieElement = document.createElement('div');
     movieElement.style.float = 'left'; 
-    movieElement.style.width = '170px'; 
+    movieElement.style.width = '150px'; 
     movieElement.style.margin = '10px';
     movieElement.style.height = '230px';
     movieElement.style.borderRadius = '5px';
@@ -55,22 +55,22 @@ function displayResults(results) {
 
 // PAGINA HOME
 document.addEventListener('DOMContentLoaded', function () {
-  const apiKey = 'f216cd46b728d209895b1387e51e9182'; // Reemplaza con tu clave de API de TMDB
+  const apiKey = 'f216cd46b728d209895b1387e51e9182'; 
 
-  // Llamada a la función para obtener las películas populares
+  // obtiene peliculas mediante la funcion
   getMediaData('movie/popular', 'primer', 'titulo');
 
-  // Llamada a la función para obtener las series populares
+  // series populares
   getMediaData('tv/popular', 'segundo', 'titulo');
 
-  // Llamada a la función para obtener las películas populares (puedes ajustar según tu lógica)
-  getMediaData('movie/popular', 'tercer', 'titulo');
+  // películas populares
+  getMediaData('movie/upcoming', 'tercer', 'titulo');
 });
 
 function getMediaData(endpoint, firstSubstring, secondSubstring) {
   const apiUrl = `https://api.themoviedb.org/3/${endpoint}?api_key=f216cd46b728d209895b1387e51e9182`;
 
-  // Haciendo la solicitud a la API de TMDB
+  // solicitud a la API
   fetch(apiUrl)
       .then(response => response.json())
       .then(data => {
@@ -86,13 +86,13 @@ function getMediaData(endpoint, firstSubstring, secondSubstring) {
 function displayMediaData(mediaArray, firstSubstring, secondSubstring, groupName) {
   const containers = document.querySelectorAll(`.${firstSubstring}.${secondSubstring}`);
 
-  // Iterar sobre los contenedores y agregar el título del grupo
+  // agregar el título del grupo
   Array.from(containers).forEach(container => {
-      // Crear una fila para los elementos
+      // crea una fila para los elementos
       const row = document.createElement('div');
       row.className = 'row';
 
-      // Iterar sobre los elementos y agregarlos a la fila
+      // agrega los elementos a la fila
       mediaArray.forEach((media, index) => {
           const mediaItem = document.createElement('div');
           mediaItem.className = 'mediaItem';
@@ -102,18 +102,18 @@ function displayMediaData(mediaArray, firstSubstring, secondSubstring, groupName
               <p>${media.release_date || media.first_air_date}</p>
           `;
 
-          // Agregar el evento onclick para redirigir a la página de detalles
+          // evento onclick para redirigir a la página de detalles
           mediaItem.onclick = function () {
               redirectToDetailPage(media.id, media.media_type);
           };
 
-          // Agregar el elemento a la fila
+          // agrega el elemento a la fila
           row.appendChild(mediaItem);
 
-          // Si hemos agregado 6 elementos o hemos llegado al final, agregar la fila al contenedor
+          // si agregamos 6 elementos ollegamos al final, agregar la fila al contenedor
           if ((index + 1) % 6 === 0 || index === mediaArray.length - 1) {
               container.appendChild(row);
-              // Crear una nueva fila para los próximos 6 elementos
+              // crea una nueva fila para los próximos 6 elementos
               row = document.createElement('div');
               row.className = 'row';
           }
@@ -121,8 +121,7 @@ function displayMediaData(mediaArray, firstSubstring, secondSubstring, groupName
   });
 }
 
-
 function redirectToDetailPage(mediaId, mediaType) {
-  // Redirige a la página de detalles con el ID y tipo de medio
+  // redirige a la página de detalles
   window.location.href = `sinopsis.html?id=${mediaId}&type=${mediaType}`;
 }

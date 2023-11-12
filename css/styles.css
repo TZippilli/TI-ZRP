@@ -120,7 +120,7 @@ a:active {
 .peliculas article{
     width: 170px;
     margin: 0 5px;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 }
 .peliculas button{
     border: white 1px solid;
@@ -130,8 +130,8 @@ a:active {
 }
 
 .peliculas img {
-    width: 170px;
-    height: 230px;
+    width: 150px;
+    height: 220px;
     border: white 1px solid;
     border-radius: 5px;
 }
