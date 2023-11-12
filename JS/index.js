@@ -3,14 +3,12 @@ https://api.themoviedb.org/3/movie/76341?api_key=da31463f5e4aa5390f02ed35a0cef0d
 document.getElementById('movieSearchForm').addEventListener('submit', function (event) {
   event.preventDefault();
 
-
   const query = document.getElementById('query').value;
 
   // Construir la URL del endpoint con la clave de la API de TMDb
   const apiKey = 'f216cd46b728d209895b1387e51e9182'; // Reemplaza con tu clave de API de TMDb
   const endpointURL = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}`;
 
- 
   fetch(endpointURL)
     .then(response => response.json())
     .then(data => {
@@ -26,6 +24,10 @@ document.getElementById('movieSearchForm').addEventListener('submit', function (
     });
 });
 
+function redirectToSynopsisPage(movieId) {
+  // Redirige a la página de sinopsis.html con el ID de la película
+  window.location.href = `sinopsis.html?id=${movieId}`;
+}
 
 function displayResults(results) {
   const resultContainer = document.getElementById('resultContainer');
@@ -34,24 +36,21 @@ function displayResults(results) {
   // creo elementos HTML para cada resultado
   results.forEach(movie => {
     const movieElement = document.createElement('div');
-    movieElement.style.float = 'left'; 
-    movieElement.style.width = '150px'; 
-    movieElement.style.margin = '10px';
-    movieElement.style.height = '230px';
-    movieElement.style.borderRadius = '5px';
-    movieElement.style.border = 'white';
-    movieElement.style.border = '1px';
-    movieElement.style.border = 'solid';
-    movieElement.style.display = 'flex';
+    movieElement.className = 'dynamicMediaItem';
+    
+    // Agrega el evento onclick para redirigir a la página de sinopsis.html
+    movieElement.onclick = function() {
+      redirectToSynopsisPage(movie.id);
+    };
 
     // para que muestre la foto y no la sinopsis
     movieElement.innerHTML = `
-      
       <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} Poster" style="max-width: 100%;">
     `;
     resultContainer.appendChild(movieElement);
   });
 }
+
 
 // PAGINA HOME
 document.addEventListener('DOMContentLoaded', function () {

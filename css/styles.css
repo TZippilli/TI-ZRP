@@ -262,6 +262,26 @@ a:active {
     border-radius: 5px;
 }
 
+.dynamicMediaItem {
+    flex: 1;
+    max-width: calc(33.333% - 20px);
+    margin: 0 10px 20px;
+    box-sizing: border-box;
+    float: left;
+    height: 230px;
+    border-radius: 5px;
+    border: 1px solid white;
+    display: flex;
+}
+
+/* Estilos para las imágenes dentro de los elementos de medios creados dinámicamente */
+.dynamicMediaItem img {
+    width: 170px;
+    height: 230px;
+    border: white 1px solid;
+    border-radius: 5px;
+}
+
 @media (max-width: 420px) {
     header {
         display: flex;
