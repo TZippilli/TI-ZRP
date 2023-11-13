@@ -1,9 +1,9 @@
 document.getElementById('movieSearchForm').addEventListener('submit', function (event) {
   event.preventDefault();
 
-  const query = document.getElementById('query').value;
-  const apiKey = 'f216cd46b728d209895b1387e51e9182';
-  const endpointURL = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}`;
+  let query = document.getElementById('query').value;
+  let apiKey = 'f216cd46b728d209895b1387e51e9182';
+  let endpointURL = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}`;
 
   fetch(endpointURL)
     .then(response => response.json())
@@ -20,16 +20,16 @@ document.getElementById('movieSearchForm').addEventListener('submit', function (
 });
 
 function redirectToDetailPage(movieId, mediaType) {
-  const url = `sinopsis.html?id=${movieId}&type=${mediaType}`;
+  let url = `sinopsis.html?id=${movieId}&type=${mediaType}`;
   window.location.href = url;
 }
 
 function displayResults(results) {
-  const resultContainer = document.getElementById('resultContainer');
+  let resultContainer = document.getElementById('resultContainer');
   resultContainer.innerHTML = '';
 
   results.forEach(movie => {
-    const movieElement = document.createElement('div');
+    let movieElement = document.createElement('div');
     movieElement.className = 'dynamicMediaItem';
 
     movieElement.onclick = function() {
@@ -45,20 +45,20 @@ function displayResults(results) {
 
 document.addEventListener('DOMContentLoaded', function () {
   // Clave de la API de TMDb
-  const apiKey = 'f216cd46b728d209895b1387e51e9182';
+  let apiKey = 'f216cd46b728d209895b1387e51e9182';
 
-  // Obtener películas populares
+  // películas populares
   getMediaData('movie/popular', 'primer', 'titulo', 'moviesContainer', 'movie');
 
-  // Obtener series populares
+  // series populares
   getMediaData('tv/popular', 'segundo', 'titulo', 'tvShowsContainer', 'tv');
 
-  // Obtener próximos estrenos
+  //  próximos estrenos
   getMediaData('movie/upcoming', 'tercer', 'titulo', 'upcomingContainer', 'movie');
 });
 
 function getMediaData(endpoint, firstSubstring, secondSubstring, containerId, mediaType) {
-  const apiUrl = `https://api.themoviedb.org/3/${endpoint}?api_key=f216cd46b728d209895b1387e51e9182`;
+  let apiUrl = `https://api.themoviedb.org/3/${endpoint}?api_key=f216cd46b728d209895b1387e51e9182`;
 
   // Realizar solicitud a la API
   fetch(apiUrl)
@@ -75,27 +75,27 @@ function getMediaData(endpoint, firstSubstring, secondSubstring, containerId, me
 }
 
 function displayMediaData(mediaArray, firstSubstring, secondSubstring, containerId, mediaType) {
-  const container = document.getElementById(containerId);
+  let container = document.getElementById(containerId);
 
-  // Limpiar resultados anteriores
+  // limpia resultados anteriores
   container.innerHTML = '';
 
-  // Crear elementos HTML para cada resultado
+  // crea elementos HTML para cada resultado
   mediaArray.forEach((media, index) => {
-      const mediaItem = document.createElement('div');
+      let mediaItem = document.createElement('div');
       mediaItem.className = 'mediaItem';
 
-      // Utilizar el título para películas o el nombre para series
-      const titleOrName = media.title || media.name;
+      // utiliza el título para películas o el nombre para series
+      let titleOrName = media.title || media.name;
 
-      // Agregar elementos al ítem de medios
+      // agrega elementos al ítem de medios (serie o peli)
       mediaItem.innerHTML = `
           <img src="https://image.tmdb.org/t/p/w500${media.poster_path}" alt="${titleOrName} Poster" style="max-width: 100%;">
           <p>${titleOrName}</p>
           <p>${media.release_date || media.first_air_date}</p>
       `;
 
-      // Agregar evento onclick para redirigir a la página de detalles
+      // evento onclick para redirigir a la página de detalles
       mediaItem.onclick = function () {
           redirectToDetailPage(media.id, mediaType);
       };
@@ -103,8 +103,8 @@ function displayMediaData(mediaArray, firstSubstring, secondSubstring, container
       // Agregar el ítem al contenedor
       container.appendChild(mediaItem);
 
-      // Si hemos agregado 6 elementos, crear una nueva fila en el contenedor
-      // si agregamos 6 elementos ollegamos al final, agregar la fila al contenedor
+      // Si  agregamos 6 elementos, crear una nueva fila en el contenedor
+      // si agregamos 6 elementos o llegamos al final, agregar la fila al contenedor
       if ((index + 1) % 6 === 0 || index === mediaArray.length - 1) {
         container.appendChild(row);
         // crea una nueva fila para los próximos 6 elementos
@@ -115,6 +115,7 @@ function displayMediaData(mediaArray, firstSubstring, secondSubstring, container
 }
 
 function redirectToDetailPage(mediaId, mediaType) {
-  // Redirigir a la página de detalles con el ID y el tipo de medio
+  // redirige a la página de detalles con el ID y el tipo de medio
   window.location.href = `sinopsis.html?id=${mediaId}&type=${mediaType}`;
 }
+

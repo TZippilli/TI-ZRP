@@ -1,11 +1,9 @@
-// sinopsis.js
-
 document.addEventListener('DOMContentLoaded', function () {
     // Obtener el ID de la película de la URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const movieId = urlParams.get('id');
+    let urlParams = new URLSearchParams(window.location.search);
+    let movieId = urlParams.get('id');
 
-    // Verificar si se proporcionó un ID válido
+    
     if (movieId) {
         // Obtener detalles de la película desde la API de TMDb
         obtenerDetallesDeLaPelicula(movieId)
@@ -22,45 +20,90 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function obtenerDetallesDeLaPelicula(movieId) {
-    const apiKey = 'f216cd46b728d209895b1387e51e9182';
-    const endpointURL = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`;
+    let apiKey = 'f216cd46b728d209895b1387e51e9182';
+    let detailsEndpointURL = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`;
+    let videosEndpointURL = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${apiKey}`;
 
     // Hacer una solicitud a la API de TMDb para obtener detalles de la película
-    return fetch(endpointURL)
+    let detailsPromise = fetch(detailsEndpointURL)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Error al obtener detalles de la película.');
             }
             return response.json();
         });
+
+    // solicitud de trailer
+    let videosPromise = fetch(videosEndpointURL)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al obtener videos de la película.');
+            }
+            return response.json();
+        });
+
+    // promise.all espera a que se concrten todos los pedidos
+    return Promise.all([detailsPromise, videosPromise])
+        .then(([details, videos]) => {
+            // detalle y video en un solo objeto
+            return { ...details, videos };
+        })
+        .catch(error => {
+            console.error('Error al obtener detalles y videos de la película:', error);
+        });
 }
 
 function mostrarDetallesEnContenedor(movieDetails) {
-    const movieDetailContainer = document.getElementById('movieDetailContainer');
+    let movieDetailContainer = document.getElementById('movieDetailContainer');
 
     // Limpiar contenido anterior
     movieDetailContainer.innerHTML = '';
 
     // Crear elementos HTML para mostrar los detalles de la película
-    const movieTitle = document.createElement('h1');
+    let movieTitle = document.createElement('h1');
     movieTitle.textContent = movieDetails.title;
 
-    const movieOverview = document.createElement('p');
+    let movieOverview = document.createElement('p');
     movieOverview.textContent = movieDetails.overview;
 
-    // Agregar elementos al contenedor
+    let movieReleaseYear = document.createElement('p');
+    movieReleaseYear.textContent = `Año de estreno: ${getYearFromDate(movieDetails.release_date)}`;
+
+    let movieRating = document.createElement('p');
+    movieRating.textContent = `Calificación: ${movieDetails.vote_average}/10`;
+
+    let movieDuration = document.createElement('p');
+    movieDuration.textContent = `Duración: ${movieDetails.runtime} minutos`;
+
+    let movieGenres = document.createElement('p');
+    movieGenres.textContent = `Género: ${getGenresString(movieDetails.genres)}`;
+
+    //agrega los elementos al contenedor
     movieDetailContainer.appendChild(movieTitle);
     movieDetailContainer.appendChild(movieOverview);
+    movieDetailContainer.appendChild(movieReleaseYear);
+    movieDetailContainer.appendChild(movieRating);
+    movieDetailContainer.appendChild(movieDuration);
+    movieDetailContainer.appendChild(movieGenres);
 
-    // Agregar reproductor de video para el trailer (si está disponible)
+    // portada
+    if (movieDetails.poster_path) {
+        let posterImage = document.createElement('img');
+        posterImage.src = `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`;
+        posterImage.alt = `${movieDetails.title} Poster`;
+        posterImage.style.maxWidth = '100%';
+        movieDetailContainer.appendChild(posterImage);
+    }
+
+    // mete trailer si esta disponible
     if (movieDetails.videos && movieDetails.videos.results.length > 0) {
-        const trailerContainer = document.createElement('div');
+        let trailerContainer = document.createElement('div');
         trailerContainer.className = 'trailerContainer';
 
-        const trailerHeading = document.createElement('h2');
+        let trailerHeading = document.createElement('h2');
         trailerHeading.textContent = 'Trailer';
 
-        const trailerIframe = document.createElement('iframe');
+        let trailerIframe = document.createElement('iframe');
         trailerIframe.src = `https://www.youtube.com/embed/${movieDetails.videos.results[0].key}`;
         trailerIframe.width = '560';
         trailerIframe.height = '315';
@@ -70,15 +113,15 @@ function mostrarDetallesEnContenedor(movieDetails) {
         trailerContainer.appendChild(trailerIframe);
         movieDetailContainer.appendChild(trailerContainer);
     }
-
-    // Agregar imagen de la portada
-    if (movieDetails.poster_path) {
-        const posterImage = document.createElement('img');
-        posterImage.src = `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`;
-        posterImage.alt = `${movieDetails.title} Poster`;
-        posterImage.style.maxWidth = '100%';
-        movieDetailContainer.appendChild(posterImage);
-    }
 }
 
-alert
+function getYearFromDate(dateString) {
+    let date = new Date(dateString);
+    return date.getFullYear();
+}
+
+// obtiene cadena del array de generos
+function getGenresString(genres) {
+    return genres.map(genre => genre.name).join(', ');
+}
+
