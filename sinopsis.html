@@ -1,9 +1,11 @@
+<!-- sinopsis.html -->
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,10 +23,10 @@
             </div>
             <nav class="topnav">
                 <ul>
-                    <li><a class="index.html" href="index.html">Home</a></li>
-                    <li><a href="index.html">Movies</a></li>
-                    <li><a href="index.html">TV Shows</a></li>
-                    <li><a href="index.html">Popular Movies</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#primer%20titulo">Movies</a></li>
+                    <li><a href="index.html#segundo%20titulo">TV Shows</a></li>
+                    <li><a href="index.html#tercer%20titulo">Upcoming</a></li>
                     <li><a href="generos.html">Genres</a></li>
                     <li><a href="favoritos.html">Favourites</a></li>
                 </ul>
@@ -39,36 +41,9 @@
         </header>
 
         <main>
-            <section class="avengerssinopsis">
-                <div class="imageavengers">
-                    <img src="./images/avengers banner.jpg.webp">
-                </div>
-                <div class="textoavengers">
-                    <h3>Avengers Endgame</h3>
-                    <p>
-                        After the devastating events of Avengers: Infinity War (2018), the universe is in ruins.
-                        With the help of
-                        remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and
-                        restore
-                        balance to the universe.
-                        <br>
-                        <br>
-                        Duration: 3h 2m
-                        <br>
-                        <br>
-                        Rating: 9,4
-                        <br>
-                        <br>
-                        2019
-                        <br>
-                        <br>
-                        Action
-                    </p>
-                    <img src="./images/estrellas.webp">
-                    <br>
-                    <a class="favButton" href="favoritos.html">Fav</a>
-                </div>
-            </section>
+            <div id="movieDetailContainer">
+                <!-- Contenido de la sinopsis aquí -->
+            </div>
         </main>
 
         <footer>
@@ -78,4 +53,7 @@
         </footer>
 
     </div>
+    <script src="./JS/sinopsis.js"></script>
 </body>
+
+</html>
