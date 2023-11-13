@@ -118,4 +118,3 @@ function redirectToDetailPage(mediaId, mediaType) {
   // redirige a la página de detalles con el ID y el tipo de medio
   window.location.href = `sinopsis.html?id=${mediaId}&type=${mediaType}`;
 }
-

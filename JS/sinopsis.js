@@ -124,4 +124,3 @@ function getYearFromDate(dateString) {
 function getGenresString(genres) {
     return genres.map(genre => genre.name).join(', ');
 }
-
