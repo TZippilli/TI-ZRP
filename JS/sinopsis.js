@@ -80,3 +80,5 @@ function mostrarDetallesEnContenedor(movieDetails) {
         movieDetailContainer.appendChild(posterImage);
     }
 }
+
+alert
