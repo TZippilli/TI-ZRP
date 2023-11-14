@@ -142,19 +142,6 @@ a:active {
 }
 
 
-.generos a {
-    color: white;
-    font-size: 25px;
-}
-
-.generos {
-    padding-left: 10px;
-    align-items: center;
-}
-
-.generos a:hover {
-    font-size: 28px;
-}
 
 .buscar input[type=text] {
     background-color: rgba(25, 4, 107, 0.496);
@@ -163,12 +150,23 @@ a:active {
     height: 17px;
 }
 
-.generos {
-    display: flex;
-    flex-direction: column;
+.todosGeneros {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content:space-between;
+        align-items: center;
+        height: 300px; 
 }
 
+.todosGeneros h2{
+    color:white;
+    border: solid 1px white;
+    border-radius: 20%;
+    padding: 10px;
+    justify-content: center;
 
+}
 .inferior img{
     max-width: 350px;
     height: auto;
@@ -234,12 +232,36 @@ a:active {
     justify-content: flex-start;
     align-items: flex-start;
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Exo 2', sans-serif;
+    font-family: 'Raleway', sans-serif;
     padding: 10px;
 }
+.movieDetailContainer ul {
+    color: white;
+    font-size: 20px;
+}
 
+.resultsContainer img{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 170px;
+    height: 230px;
+    border: white 1px solid;
+    border-radius: 5px;
+}
 
+.resultsContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: ;
+    margin: 10px;
+}
 
+.resultsContainer p{
+    color: white;
+}
 
 
 

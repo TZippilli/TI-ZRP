@@ -10,14 +10,14 @@ fetch(apiPeli)
     })
     .then(function(data){
         console.log(data);
-        let info = data.results
+        let datos = data.results
         let container = document.querySelector('.resultsContainer');
             let peliculas = '';
-            for(let i=0; i<info.length; i++){
+            for(let i=0; i<datos.length; i++){
                 peliculas += `<article>
-                                    <a href='sinopsis.html?id=${info[i].id}'>
-                                    <img src=${"https://image.tmdb.org/t/p/w300/" + info[i].poster_path} alt='' />
-                                    <p>${info[i].title}</p>  </a>
+                                    <a href='sinopsis.html?id=${datos[i].id}'>
+                                    <img src=${"https://image.tmdb.org/t/p/w300/" + datos[i].poster_path} alt='' />
+                                    <p>${datos[i].title}</p>  </a>
                                 </article>`
             }
             container.innerHTML = peliculas;   

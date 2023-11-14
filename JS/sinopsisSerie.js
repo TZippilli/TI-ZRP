@@ -32,7 +32,7 @@ fetch(urlSerie)
 
                             let generos = document.querySelector('.generos');
                             for (let i=0; i<data.genres.length; i++) {
-                                generos.innerHTML += `<a href='genres.html?id=${data.genres[i].name}'>
+                                generos.innerHTML += `<a href='generos.html?id=${data.genres[i].name}'>
                                                         <ul>${data.genres[i].name}</ul>
                                                         </a>`
                             }

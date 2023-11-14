@@ -7,16 +7,16 @@ fetch(urlGeneros)
         console.log(data)
         let datos = data.genres
         let container = document.querySelector('.todosGeneros');
-        let titulos_generos ='';
+        let titulosGeneros ='';
         for (let i=0; i<datos.length; i++){
-            titulos_generos += `<article class="${datos[i].name}">
+            titulosGeneros += `<article class="${datos[i].name}">
                                     <a href='sinopsisGenero.html?id=${datos[i].id}'>
                                         <h2>${datos[i].name}</h2>
                                     </a>
                                 </article>`
 
         }
-        container.innerHTML = titulos_generos;
+        container.innerHTML = titulosGeneros;
     })
     .catch(function(error){
         console.log(error);

@@ -21,7 +21,7 @@ fetch(urlPeli)
                                 <div class="foto_trailer">
                                     <img src="${urlImagen + data.poster_path}" width="300px" height ='520px'>
                                     <div class = "Trailer"></div>
-                                    <div class="otros_videos"><p>Todos los videos y trailers</p></div>
+                                    <div class="otrosVideos"><p>Todos los videos y trailers</p></div>
                                 </div>
                                 <ul class="generos"></ul>
                                 <p>${data.overview}</p>
@@ -54,7 +54,7 @@ fetch(urlPeli)
         console.log(data);
         let urlYoutube = 'https://www.youtube.com/embed/'
         let Trailer = document.querySelector('.Trailer')
-        let videos = document.querySelector('.otros_videos')
+        let videos = document.querySelector('.otrosVideos')
         for (let i = 0; i< data.results.length; i++){                    
             if (data.results[i].type == 'Trailer'){
                 Trailer.innerHTML += `<iframe src = "${urlYoutube + data.results[i].key}" width= "850px" height = "520px"></iframe>`
