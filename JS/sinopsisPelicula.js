@@ -30,8 +30,8 @@ fetch(urlPeli)
 
         let generos = document.querySelector('.generos');
         for (let i = 0; i < data.genres.length; i++) {
-            generos.innerHTML += `<a href='generos.html?id=${data.genres[i].name}'>
-                                                        <ul>${data.genres[i].name}</ul>
+            generos.innerHTML += `<a href='sinopsisGenero.html?id=${data.genres[i].id}&name=${data.genres[i].name}'>
+                                                        ${data.genres[i].name}
                                                         </a>`
         }
 

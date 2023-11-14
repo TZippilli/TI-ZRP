@@ -10,7 +10,7 @@ fetch(urlGeneros)
         let titulosGeneros ='';
         for (let i=0; i<datos.length; i++){
             titulosGeneros += `<article class="${datos[i].name}">
-                                    <a href='sinopsisGenero.html?id=${datos[i].id}'>
+                                    <a href='sinopsisGenero.html?id=${datos[i].id}&name=${data.genres[i].name}'>
                                         <h2>${datos[i].name}</h2>
                                     </a>
                                 </article>`

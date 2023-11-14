@@ -18,7 +18,7 @@ fetch(urlPelis)
 
     for (let i = 0; i < datos.length && i < 6; i++) { //solo muestra 6 resultados
       peliculasPopulares += `<article class="peliculas">
-                                  <a href='sinopsis.html?id=${datos[i].id}'>
+                                  <a href='sinopsisPelicula.html?id=${datos[i].id}'>
                                       <img src=${"https://image.tmdb.org/t/p/w300/" + datos[i].poster_path} alt='' />
                                       <p>${datos[i].title}</p>
                                   </a>
