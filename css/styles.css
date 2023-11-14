@@ -173,47 +173,6 @@ a:active {
     margin-bottom: 10px;
 }
 
-/* Agrega estilos para las filas y elementos de medios */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 10px; /* Ajusta según sea necesario */
-}
-
-.mediaItem {
-    flex: 1;
-    max-width: calc(33.333% - 10px); /* Ajusta según sea necesario */
-    margin: 0 5px 10px; /* Ajusta según sea necesario */
-    box-sizing: border-box;
-}
-
-.mediaItem img {
-    width: 170px;
-    height: 230px;
-    border: white 1px solid;
-    border-radius: 5px;
-}
-
-.dynamicMediaItem {
-    flex: 1;
-    max-width: calc(33.333% - 20px);
-    margin: 0 10px 20px;
-    box-sizing: border-box;
-    float: left;
-    height: 230px;
-    border-radius: 5px;
-    border: 1px solid white;
-    display: flex;
-}
-
-/* Estilos para las imágenes dentro de los elementos de medios creados dinámicamente */
-.dynamicMediaItem img {
-    width: 170px;
-    height: 230px;
-    border: white 1px solid;
-    border-radius: 5px;
-}
-
 
 .Trailer{
     justify-content: space-around;
@@ -255,7 +214,6 @@ a:active {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: ;
     margin: 10px;
 }
 
@@ -264,7 +222,9 @@ a:active {
 }
 
 
-
+.peliculas p {
+    color: white;
+}
 
 
 

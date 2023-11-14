@@ -18,8 +18,8 @@ fetch(urlSerie)
         let bloque = document.querySelector('.serieDetailContainer')
         let urlImagen = 'https://image.tmdb.org/t/p/w342/'
         bloque.innerHTML += `<div class="serieDetailContainer">
-                                <h2>${data.original_title}</h2>
-                                <p>${data.release_date}  |  ${data.runtime} minutos</p>
+                                <h2>${data.original_name}</h2>
+                                <p>${data.first_air_date}  |  ${data.number_of_episodes} episodios </p>
                                 <div class="foto_trailer">
                                     <img src="${urlImagen + data.poster_path}" width="300px" height ='520px'>
                                     <div class = "Trailer"></div>
@@ -36,7 +36,6 @@ fetch(urlSerie)
                                                         <ul>${data.genres[i].name}</ul>
                                                         </a>`
                             }
-  
     })
     .catch(function(error){
         console.log(error);

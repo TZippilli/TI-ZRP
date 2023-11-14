@@ -1,75 +1,88 @@
-document.addEventListener('DOMContentLoaded', function () {
-  // Clave de la API de TMDb
-  let apiKey = 'f216cd46b728d209895b1387e51e9182';
+let apiKey = 'f216cd46b728d209895b1387e51e9182';
 
-  // películas populares
-  getMediaData('movie/popular', 'primer', 'titulo', 'moviesContainer', 'movie');
+let query = location.search;
+let StringToObject = new URLSearchParams(query);
+let id = StringToObject.get('id');
 
-  // series populares
-  getMediaData('tv/popular', 'segundo', 'titulo', 'tvShowsContainer', 'tv');
+// agrego peliculas al index
+let urlPelis = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`
 
-  //  próximos estrenos
-  getMediaData('movie/upcoming', 'tercer', 'titulo', 'upcomingContainer', 'movie');
-});
+fetch(urlPelis)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data)
+    let datos = data.results
+    let peliculasPopulares = '';
 
-function getMediaData(endpoint, firstSubstring, secondSubstring, containerId, mediaType) {
-  let apiUrl = `https://api.themoviedb.org/3/${endpoint}?api_key=f216cd46b728d209895b1387e51e9182`;
+    for (let i = 0; i < datos.length && i < 6; i++) { //solo muestra 6 resultados
+      peliculasPopulares += `<article class="peliculas">
+                                  <a href='sinopsis.html?id=${datos[i].id}'>
+                                      <img src=${"https://image.tmdb.org/t/p/w300/" + datos[i].poster_path} alt='' />
+                                      <p>${datos[i].title}</p>
+                                  </a>
+                              </article>`
+    }
+    document.getElementById('moviesContainer').innerHTML = peliculasPopulares; //actualiza el contenedor
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
 
-  // Realizar solicitud a la API
-  fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => {
-          if (data.results.length > 0) {
-              // Mostrar los datos en el contenedor correspondiente
-              displayMediaData(data.results, firstSubstring, secondSubstring, containerId, mediaType);
-          } else {
-              console.error(`No se encontraron resultados para ${endpoint}`);
-          }
-      })
-      .catch(error => console.error(`Error al obtener resultados de ${endpoint}`, error));
-}
 
-function displayMediaData(mediaArray, firstSubstring, secondSubstring, containerId, mediaType) {
-  let container = document.getElementById(containerId);
 
-  // limpia resultados anteriores
-  container.innerHTML = '';
+// agrego series al index
 
-  // crea elementos HTML para cada resultado
-  mediaArray.forEach((media, index) => {
-      let mediaItem = document.createElement('div');
-      mediaItem.className = 'mediaItem';
+let urlSeries = `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}&language=en-US&page=1`
 
-      // utiliza el título para películas o el nombre para series
-      let titleOrName = media.title || media.name;
+fetch(urlSeries)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data)
+    let datos = data.results
+    let seriesPopulares = '';
 
-      // agrega elementos al ítem de medios (serie o peli)
-      mediaItem.innerHTML = `
-          <img src="https://image.tmdb.org/t/p/w500${media.poster_path}" alt="${titleOrName} Poster" style="max-width: 100%;">
-          <p>${titleOrName}</p>
-          <p>${media.release_date || media.first_air_date}</p>
-      `;
+    for (let i = 0; i < datos.length && i < 6; i++) { //solo muestra 6 resultados
+      seriesPopulares += `<article class="peliculas">
+                                  <a href='sinopsisSerie.html?id=${datos[i].id}'>
+                                      <img src=${"https://image.tmdb.org/t/p/w300/" + datos[i].poster_path} alt='' />
+                                      <p>${datos[i].original_name}</p>
+                                  </a>
+                              </article>`
+    }
+    document.getElementById('tvShowsContainer').innerHTML = seriesPopulares; //actualiza el contenedor
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
 
-      // evento onclick para redirigir a la página de detalles
-      mediaItem.onclick = function () {
-          redirectToDetailPage(media.id, mediaType);
-      };
 
-      // Agregar el ítem al contenedor
-      container.appendChild(mediaItem);
 
-      // Si  agregamos 6 elementos, crear una nueva fila en el contenedor
-      // si agregamos 6 elementos o llegamos al final, agregar la fila al contenedor
-      if ((index + 1) % 6 === 0 || index === mediaArray.length - 1) {
-        container.appendChild(row);
-        // crea una nueva fila para los próximos 6 elementos
-        row = document.createElement('div');
-        row.className = 'row';
-      }
-  });
-}
+// agrego upcoming al index
+let urlUpcoming = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&language=en-US&page=1`
 
-function redirectToDetailPage(mediaId, mediaType) {
-  // redirige a la página de detalles con el ID y el tipo de medio
-  window.location.href = `sinopsis.html?id=${mediaId}&type=${mediaType}`;
-}
+fetch(urlUpcoming)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data)
+    let datos = data.results
+    let upcomingPopulares = '';
+
+    for (let i = 0; i < datos.length && i < 6; i++) { //solo muestra 6 resultados
+      upcomingPopulares += `<article class="peliculas">
+                                  <a href='sinopsis.html?id=${datos[i].id}'>
+                                      <img src=${"https://image.tmdb.org/t/p/w300/" + datos[i].poster_path} alt='' />
+                                      <p>${datos[i].title}</p>
+                                  </a>
+                              </article>`
+    }
+    document.getElementById('upcomingContainer').innerHTML = upcomingPopulares; //actualiza el contenedor
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
