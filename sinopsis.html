@@ -30,24 +30,18 @@
                     <li><a href="generos.html">Genres</a></li>
                     <li><a href="favoritos.html">Favourites</a></li>
                 </ul>
-                <form class="buscar" action="resultados.html" method="GET">
-                    <div>
-                        <label for="nombre">Search:</label>
-                        <input id="nombre" type="text" name="nombre" value="">
-                    </div>
-                </form>
+                <article class="buscador">
+                    <form action="resultados.html" method="GET">
+                        <input class="inputBusqueda" type="text" name="query" value="" placeholder="Escriba aqui...">
+                        <button class = "boton_busqueda" type="submit">Buscar</button>
+                    </form>
+                </article>
             </nav>
-
         </header>
 
-        <main>
-            <div id="movieDetailContainer"> 
+            <div class="movieDetailContainer"> 
                 <!-- Aquí se mostrarán los detalles de la película -->
             </div>
-            <div id="trailerContainer"> 
-                <!-- Aquí se mostrará el trailer de la película (si está disponible) -->
-            </div>
-        </main>
 
         <footer>
             <div class="inferior">
@@ -56,7 +50,7 @@
         </footer>
 
     </div>
-    <script src="./JS/sinopsis.js"></script>
+    <script src="./JS/sinopsisPelicula.js"></script>
 </body>
 
 </html>

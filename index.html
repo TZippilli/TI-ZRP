@@ -28,13 +28,10 @@
                     <li><a href="favoritos.html">Favourites</a></li>
                 </ul>
                 <article class="buscador">
-                    <form id="movieSearchForm">
-                        <label for="query">Ingresa el título de la película:</label>
-                        <input type="text" id="query" name="query" required>
-                        <button type="submit">Buscar</button>
+                    <form action="resultados.html" method="GET">
+                        <input class="inputBusqueda" type="text" name="query" value="" placeholder="Escriba aqui...">
+                        <button class = "boton_busqueda" type="submit">Buscar</button>
                     </form>
-
-                    <div id="resultContainer"></div>
                 </article>
             </nav>
         </header>
@@ -56,7 +53,9 @@
                 </div>
                 <section class="peliculas" id="upcomingContainer"></section>
             </div>
+
         </main>
+
         <footer>
             <div class="inferior">
                 <div class="nombres">
