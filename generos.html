@@ -20,34 +20,26 @@
             </div>
             <nav class="topnav">
                 <ul>
-                    <li><a class="index.html" href="index.html">Home</a></li>
-                    <li><a href="index.html">Movies</a></li>
-                    <li><a href="index.html">TV Shows</a></li>
-                    <li><a href="index.html">Popular Movies</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#primer titulo">Movies</a></li>
+                    <li><a href="#segundo titulo">TV Shows</a></li>
+                    <li><a href="#tercer titulo">Upcoming</a></li>
                     <li><a href="generos.html">Genres</a></li>
                     <li><a href="favoritos.html">Favourites</a></li>
                 </ul>
-                <form class="buscar" action="resultados.html" method="GET">
-                    <div>
-                        <label for="nombre">Search:</label>
-                        <input id="nombre" type="text" name="nombre" value="">
-                    </div>
-                </form>
-
+                <article class="buscador">
+                    <form action="resultados.html" method="GET">
+                        <input class="inputBusqueda" type="text" name="query" value="" placeholder="Escriba aqui...">
+                        <button class="boton_busqueda" type="submit">Buscar</button>
+                    </form>
+                </article>
             </nav>
 
         </header>
-        <div class="generos">
-            <h1>Genres</h1>
-            <section class="peliculasgeneros">
-                <ul>
-                    <li><a href="accion.html">Thriller</a></li>
-                    <li><a href="accion.html">Comedy</a></li>
-                    <li><a href="accion.html">Kids</a></li>
-                    <li><a href="accion.html">Action</a></li>
-                </ul>  
-            </section>
-        </div>
+
+        <section class="todosGeneros">
+           
+        </section>
 
         <footer>
             <div class="inferior">
@@ -55,6 +47,7 @@
             </div>
         </footer>
     </div>
+    <script src="./JS/generos.js"></script>
 </body>
 
 </html>

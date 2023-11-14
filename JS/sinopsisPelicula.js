@@ -30,11 +30,43 @@ fetch(urlPeli)
 
                             let generos = document.querySelector('.generos');
                             for (let i=0; i<data.genres.length; i++) {
-                                generos.innerHTML += `<a href='genres.html?id=${data.genres[i].name}'>
+                                generos.innerHTML += `<a href='generos.html?id=${data.genres[i].name}'>
                                                         <ul>${data.genres[i].name}</ul>
                                                         </a>`
                             }
   
+    })
+    .catch(function(error){
+        console.log(error);
+    })
+
+
+
+
+
+
+    let urlTrailer = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=f216cd46b728d209895b1387e51e9182&language=en-US`
+    fetch(urlTrailer)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        console.log(data);
+        let urlYoutube = 'https://www.youtube.com/embed/'
+        let Trailer = document.querySelector('.Trailer')
+        let videos = document.querySelector('.otros_videos')
+        for (let i = 0; i< data.results.length; i++){                    
+            if (data.results[i].type == 'Trailer'){
+                Trailer.innerHTML += `<iframe src = "${urlYoutube + data.results[i].key}" width= "850px" height = "520px"></iframe>`
+                
+                break
+            }
+        }
+        for (let i = 0; i< data.results.length; i++){                    
+            if (data.results[i].type == 'Trailer'){
+                videos.innerHTML += `<iframe src = "${urlYoutube + data.results[i].key}" ></iframe>`
+            }
+        }
     })
     .catch(function(error){
         console.log(error);
