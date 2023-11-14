@@ -195,6 +195,22 @@ a:active {
     font-family: 'Raleway', sans-serif;
     padding: 10px;
 }
+.serieDetailContainer ul {
+    color: white;
+    font-size: 20px;
+}
+
+.serieDetailContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: center;
+    font-family: 'Exo 2', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    padding: 10px;
+}
 .movieDetailContainer ul {
     color: white;
     font-size: 20px;
