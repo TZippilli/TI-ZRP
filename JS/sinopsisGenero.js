@@ -12,40 +12,39 @@ let urlGeneroPeli = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKe
 let peliculas = document.querySelector('.pelis_genero')
 
 fetch(urlGeneroPeli)
-.then(function (response) {
-    return response.json()
-}
-)
-.then(function (data) {
-    console.log(data);
-    for (let i = 0; i < data.results.length; i++) {
-        let agregar = false;
-        let listaId = data.results[i].genre_ids;
-        for (let index = 0; index < listaId.length; index++) {
-            if (listaId[index] == id) {
-                agregar = true
+    .then(function (response) {
+        return response.json()
+    }
+    )
+    .then(function (data) {
+        console.log(data);
+        console.log(data.results[i])
+        for (let i = 0; i < data.results.length; i++) {
+            let agregar = false;
+            let listaId = data.results[i].genre_ids;
+            for (let index = 0; index < listaId.length; index++) {
+                if (listaId[index] == id) {
+                    agregar = true
+                }
+
             }
-            
-        }
-       if (agregar == true) {
-        let popular = data.results[i]
-        peliculas.innerHTML += ` <article class="peliculasGenero"> 
+            if (agregar == true) {
+                let popular = data.results[i]
+                peliculas.innerHTML += ` <article class="peliculasGenero"> 
                                 <a class="aclickeo" href="./sinopsisPelicula.html?idPelicula=${popular.id}">
                                 <img src="https://image.tmdb.org/t/p/w500/${popular.poster_path}" alt="" class="img1">
-                                ${popular.title} (${popular.release_date})
+                                <p>${popular.title}</p>
+                                <p>(${popular.release_date})</p>
                                 </a>
                                 </article>
                                  `
-       }
-        
-      
-
+            }
+        }
+        return data;
     }
-    return data;
-}
-)
-.catch(function (error) {
-    console.log(error);
-    return error;
-}
-)
+    )
+    .catch(function (error) {
+        console.log(error);
+        return error;
+    }
+    )

@@ -369,6 +369,13 @@ a:active {
     color: white;
 }
 
+.contenedorPadreResults {
+    display: flex;
+    flex-direction: column;
+}
+.results {
+    max-width: 100%;
+}
 .resultsContainer img{
     display: flex;
     flex-direction: column;

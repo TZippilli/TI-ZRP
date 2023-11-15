@@ -21,6 +21,7 @@ fetch(urlPelis)
                                   <a href='sinopsisPelicula.html?id=${datos[i].id}'>
                                       <img src=${"https://image.tmdb.org/t/p/w300/" + datos[i].poster_path} alt='' />
                                       <p>${datos[i].title}</p>
+                                      <p>${datos[i].release_date}</p>
                                   </a>
                               </article>`
     }
@@ -50,6 +51,7 @@ fetch(urlSeries)
                                   <a href='sinopsisSerie.html?id=${datos[i].id}'>
                                       <img src=${"https://image.tmdb.org/t/p/w300/" + datos[i].poster_path} alt='' />
                                       <p>${datos[i].original_name}</p>
+                                      <p>${datos[i].first_air_date}</p>
                                   </a>
                               </article>`
     }
@@ -78,6 +80,7 @@ fetch(urlUpcoming)
                                   <a href='sinopsisPelicula.html?id=${datos[i].id}'>
                                       <img src=${"https://image.tmdb.org/t/p/w300/" + datos[i].poster_path} alt='' />
                                       <p>${datos[i].title}</p>
+                                      <p>${datos[i].release_date}</p>
                                   </a>
                               </article>`
     }
