@@ -29,3 +29,7 @@ fetch(apiPeli)
     .catch(error => {
         console.error('Error:', error);
     });
+
+
+
+//recomendaciones

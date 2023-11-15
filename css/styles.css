@@ -306,7 +306,49 @@ a:active {
 }
 
 
-.recomendaciones_2 {
+
+.detalleSerie{
+    display: flex;
+    flex-direction: column;
+}
+.detalleSerie a{
+    color: white;
+}
+.detalleSerie h2{
+    display: flex;
+    justify-content: flex-start;
+}
+.detalleSerie p{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.serieDetailContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    font-family: 'Exo 2', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    padding: 10px;
+}
+
+.serieDetailContainer ul {
+    color: white;
+    font-size: 20px;
+}
+
+.serieDetailContainer img {
+    width: 250px;
+    height: 400px;
+
+}
+
+
+
+
+
+.recomendaciones_2 { 
     display: flex;
     flex-direction: row;
 }
@@ -322,29 +364,7 @@ a:active {
 
 
 
-.serieDetailContainer ul {
-    color: white;
-    font-size: 20px;
-}
 
-.serieDetailContainer {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    text-align: center;
-    font-family: 'Exo 2', sans-serif;
-    font-family: 'Raleway', sans-serif;
-    padding: 10px;
-}
-.detalleSerie {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-
-}
 .generos a {
     color: white;
 }
