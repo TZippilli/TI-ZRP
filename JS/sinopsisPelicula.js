@@ -15,7 +15,7 @@ fetch(urlPeli)
 
         let bloque = document.querySelector('.movieDetailContainer')
         let urlImagen = 'https://image.tmdb.org/t/p/w342/'
-        bloque.innerHTML += `<div class="movieDetailContainer">
+        bloque.innerHTML += `<div class="containerDetallePelis">
                                 <h2>${data.original_title}</h2>
                                 <p>${data.release_date}  |  ${data.runtime} minutos</p>
                                 <div class="foto_trailer">
@@ -30,9 +30,9 @@ fetch(urlPeli)
 
         let generos = document.querySelector('.generos');
         for (let i = 0; i < data.genres.length; i++) {
-            generos.innerHTML += `<a href='sinopsisGenero.html?id=${data.genres[i].id}&name=${data.genres[i].name}'>
+            generos.innerHTML += `| <a href='sinopsisGenero.html?id=${data.genres[i].id}&name=${data.genres[i].name}'>
                                                         ${data.genres[i].name}
-                                                        </a>`
+                                                        | </a>  `
         }
 
     })
@@ -57,7 +57,7 @@ fetch(urlTrailer)
         let videos = document.querySelector('.otrosVideos')
         for (let i = 0; i < data.results.length; i++) {
             if (data.results[i].type == 'Trailer') {
-                Trailer.innerHTML += `<iframe src = "${urlYoutube + data.results[i].key}" width= "850px" height = "520px"></iframe>`
+                Trailer.innerHTML += `<iframe src = "${urlYoutube + data.results[i].key}" width= "650px" height = "420px"></iframe>`
 
                 break
             }
@@ -75,11 +75,11 @@ fetch(urlTrailer)
 
 //recomendaciones
 let urlRecomendaciones = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=f216cd46b728d209895b1387e51e9182&language=en-US&page=1`
-    fetch(urlRecomendaciones)
-    .then(function(response){
+fetch(urlRecomendaciones)
+    .then(function (response) {
         return response.json();
     })
-    .then(function(data){
+    .then(function (data) {
         console.log(data);
 
         let section = document.querySelector('.recomendaciones')
@@ -111,17 +111,17 @@ let urlRecomendaciones = `https://api.themoviedb.org/3/movie/${id}/recommendatio
                             <p>Nombre: ${data.results[3].original_title}</p>
                             </a>
                             </article>
-                            </section>`   
+                            </section>`
     })
-    .catch(function(error){
+    .catch(function (error) {
         console.log(error);
     })
-    
-    let buttonRecomendaciones = document.querySelector(".recomendacionesButton");
-    let recomendaciones = document.querySelector(".recomendaciones");
 
-    buttonRecomendaciones.addEventListener('click', function(e){
-        buttonRecomendaciones.style.display = "none";
+let buttonRecomendaciones = document.querySelector(".recomendacionesButton");
+let recomendaciones = document.querySelector(".recomendaciones");
 
-        recomendaciones.style.display = "block";
-    })
+buttonRecomendaciones.addEventListener('click', function (e) {
+    buttonRecomendaciones.style.display = "none";
+
+    recomendaciones.style.display = "block";
+})

@@ -159,10 +159,6 @@ a:active {
     border-radius: 5px;
 }
 
-.pelis_genero img:hover {
-    width: 175px;
-    height: 235px;
-}
 .aclickeo {
     color: white;
 }
@@ -182,17 +178,11 @@ a:active {
     margin-bottom: 5px;
 }
 
-
 .recomendaciones img {
     width: 150px;
     height: 220px;
     border: white 1px solid;
     border-radius: 5px;
-}
-
-.recomendaciones img:hover {
-    width: 175px;
-    height: 235px;
 }
 
 .recomendaciones p {
@@ -203,9 +193,35 @@ a:active {
     max-width: 200px;
 }
 
+.recomendacionesSerie {
+    max-width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-family: 'Exo 2', sans-serif;
+    font-family: 'Raleway', sans-serif;
+}
+.recomendacionesSerie article{
+    width: 170px;
+    margin: 0 5px;
+    margin-bottom: 5px;
+}
 
+.recomendacionesSerie img {
+    width: 150px;
+    height: 220px;
+    border: white 1px solid;
+    border-radius: 5px;
+}
 
+.recomendacionesSerie p {
+    color: white;
+}
 
+.recomendacionesSerie article {
+    max-width: 200px;
+}
 
 
 
@@ -239,7 +255,6 @@ a:active {
     margin-bottom: 10px;
 }
 
-
 .Trailer{
     justify-content: space-around;
 }
@@ -247,20 +262,66 @@ a:active {
 .fotoTrailer{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
 }
 
+
+.containerDetallePelis{
+    display: flex;
+    flex-direction: column;
+}
+.containerDetallePelis a{
+    color: white;
+}
+.containerDetallePelis h2{
+    display: flex;
+    justify-content: flex-start;
+}
+.containerDetallePelis p{
+    display: flex;
+    justify-content: flex-start;
+}
+.foto_trailer {
+    justify-content: flex-start;
+    flex-direction: row;
+}
 .movieDetailContainer {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
     text-align: center;
     font-family: 'Exo 2', sans-serif;
     font-family: 'Raleway', sans-serif;
     padding: 10px;
 }
+
+.movieDetailContainer ul {
+    color: white;
+    font-size: 20px;
+}
+
+.movieDetailContainer img {
+    width: 250px;
+    height: 400px;
+
+}
+
+
+.recomendaciones_2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.recomendaciones_3 {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+
+
+
 .serieDetailContainer ul {
     color: white;
     font-size: 20px;
@@ -277,9 +338,15 @@ a:active {
     font-family: 'Raleway', sans-serif;
     padding: 10px;
 }
-.movieDetailContainer ul {
+.detalleSerie {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+}
+.generos a {
     color: white;
-    font-size: 20px;
 }
 
 .resultsContainer img{
