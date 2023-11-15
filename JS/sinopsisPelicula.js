@@ -71,3 +71,57 @@ fetch(urlTrailer)
     .catch(function (error) {
         console.log(error);
     })
+
+
+//recomendaciones
+let urlRecomendaciones = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=f216cd46b728d209895b1387e51e9182&language=en-US&page=1`
+    fetch(urlRecomendaciones)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        console.log(data);
+
+        let section = document.querySelector('.recomendaciones')
+        let urlImgReco = 'https://image.tmdb.org/t/p/w300/'
+        section.innerHTML += `
+                            <h2> Recomendaciones:</h2>
+                            <section class="recomendaciones_2">
+                            <article>
+                            <a href='sinopsisPelicula.html?id=${data.results[0].id}'>
+                            <img src="${urlImgReco + data.results[0].poster_path}">
+                            <p>Nombre: ${data.results[0].original_title}</p>
+                            </a>
+                            </article>
+                            <article>
+                            <a href='sinopsisPelicula.html?id=${data.results[1].id}'>
+                            <img src="${urlImgReco + data.results[1].poster_path}">
+                            <p>Nombre: ${data.results[1].original_title}</p>
+                            </a>
+                            </article>
+                            <article>
+                            <a href='sinopsisPelicula.html?id=${data.results[2].id}'>
+                            <img src="${urlImgReco + data.results[2].poster_path}">
+                            <p>Nombre: ${data.results[2].original_title}</p>
+                            </a>
+                            </article>
+                            <article>
+                            <a href='sinopsisPelicula.html?id=${data.results[3].id}'>
+                            <img src="${urlImgReco + data.results[3].poster_path}">
+                            <p>Nombre: ${data.results[3].original_title}</p>
+                            </a>
+                            </article>
+                            </section>`   
+    })
+    .catch(function(error){
+        console.log(error);
+    })
+    
+    let buttonRecomendaciones = document.querySelector(".recomendacionesButton");
+    let recomendaciones = document.querySelector(".recomendaciones");
+
+    buttonRecomendaciones.addEventListener('click', function(e){
+        buttonRecomendaciones.style.display = "none";
+
+        recomendaciones.style.display = "block";
+    })
