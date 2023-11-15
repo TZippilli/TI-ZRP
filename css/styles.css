@@ -360,7 +360,14 @@ a:active {
 
 
 
-
+.recomendacionesButton{
+    background-color: rgb(156, 156, 234);
+    margin-left: 10px;
+}
+.recomendacionesButtonSerie{
+    background-color: rgb(156, 156, 234);
+    margin-left: 10px;
+}
 
 
 
@@ -369,13 +376,6 @@ a:active {
     color: white;
 }
 
-.contenedorPadreResults {
-    display: flex;
-    flex-direction: column;
-}
-.results {
-    max-width: 100%;
-}
 .resultsContainer img{
     display: flex;
     flex-direction: column;
