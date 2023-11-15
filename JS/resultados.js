@@ -13,7 +13,7 @@ fetch(apiPeli)
         if (data.results.length === 0) {
             container.innerHTML = `No hay resultados para su búsqueda de películas: <strong>"${buscamos}"</strong>`;
         } else {
-            container.innerHTML = `Estos son los títulos de películas que coinciden con tu búsqueda de <strong>"${buscamos}"</strong>:`;
+            container.innerHTML = `<div class="textoResult">Estos son los títulos de películas que coinciden con tu búsqueda de <strong>"${buscamos}"</strong>:</div>`;
             let peliculas = '';
             data.results.forEach(movie => {
                 peliculas += `<article>
