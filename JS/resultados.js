@@ -23,7 +23,8 @@ fetch(apiPeli)
                                     </a>
                                 </article>`;
             });
-            container.innerHTML += peliculas;
+            
+            
         }
     })
     .catch(error => {
