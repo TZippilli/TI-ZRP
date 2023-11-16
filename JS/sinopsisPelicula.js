@@ -55,9 +55,13 @@ fetch(urlTrailer)
         let urlYoutube = 'https://www.youtube.com/embed/'
         let Trailer = document.querySelector('.Trailer')
         let videos = document.querySelector('.otrosVideos')
+        if (data.results.length === 0 || !data.results.some(trailer => trailer.type === 'Trailer')) { //si no hay trailers disponibles
+            Trailer.innerHTML = "No hay trailers disponibles";
+            return;
+        }
         for (let i = 0; i < data.results.length; i++) {
             if (data.results[i].type == 'Trailer') {
-                Trailer.innerHTML += `<iframe src = "${urlYoutube + data.results[i].key}" width= "650px" height = "420px"></iframe>`
+                Trailer.innerHTML += `<iframe src = "${urlYoutube + data.results[i].key}" width= "480px" height = "340px"></iframe>`
 
                 break
             }

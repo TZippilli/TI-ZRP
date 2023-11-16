@@ -1,3 +1,6 @@
+// Mostrar el loader antes de hacer la búsqueda
+document.getElementById('loader').classList.remove('hidden');
+
 let consulta = location.search;
 let stringToObject = new URLSearchParams(consulta);
 let buscamos = stringToObject.get('query');
@@ -9,6 +12,10 @@ fetch(apiPeli)
     .then(response => response.json())
     .then(data => {
         console.log(data);
+
+        // ocultar el loader después de cargar los resultados
+        document.getElementById('loader').classList.add('oculto');
+
         let container = document.querySelector('.resultsContainer');
         if (data.results.length === 0) {
             container.innerHTML = `No hay resultados para su búsqueda de películas: <strong>"${buscamos}"</strong>`;
@@ -23,11 +30,12 @@ fetch(apiPeli)
                                     </a>
                                 </article>`;
             });
-            
-            
+            container.innerHTML += peliculas;
         }
     })
     .catch(error => {
         console.error('Error:', error);
-    });
 
+        // oculta el loader si hay un error
+        document.getElementById('loader').classList.add('oculto');
+    });

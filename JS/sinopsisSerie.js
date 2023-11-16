@@ -23,7 +23,7 @@ fetch(urlSerie)
                                 <div class="foto_trailer">
                                     <img src="${urlImagen + data.poster_path}" width="300px" height ='520px'>
                                     <div class = "Trailer"></div>
-                                    <div class="otros_videos"><p>Todos los videos y trailers</p></div>
+                                    
                                 </div>
                                 <div class="generos"></div>
                                 <p>${data.overview}</p>
@@ -53,6 +53,10 @@ fetch(urlTrailer)
         let urlYoutube = 'https://www.youtube.com/embed/';
         let Trailer = document.querySelector('.Trailer');
         let videos = document.querySelector('.otrosVideos');
+        if (data.results.length === 0 || !data.results.some(trailer => trailer.type === 'Trailer')) { //si no hay trailers disponibles
+            Trailer.innerHTML = "No hay trailers disponibles";
+            return;
+        }
 
         // busco el trailer y lo muestro en el div .Trailer
         for (let i = 0; i < data.results.length; i++) {
