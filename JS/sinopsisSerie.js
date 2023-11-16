@@ -96,25 +96,25 @@ fetch(urlRecomendacionesSerie)
                             <article>
                             <a href='sinopsisSerie.html?id=${data.results[0].id}'>
                             <img src="${urlImgReco + data.results[0].poster_path}">
-                            <p>Nombre: ${data.results[0].original_name}</p>
+                            <p>${data.results[0].original_name}</p>
                             </a>
                             </article>
                             <article>
                             <a href='sinopsisSerie.html?id=${data.results[1].id}'>
                             <img src="${urlImgReco + data.results[1].poster_path}">
-                            <p>Nombre: ${data.results[1].original_name}</p>
+                            <p>${data.results[1].original_name}</p>
                             </a>
                             </article>
                             <article>
                             <a href='sinopsisSerie.html?id=${data.results[2].id}'>
                             <img src="${urlImgReco + data.results[2].poster_path}">
-                            <p>Nombre: ${data.results[2].original_name}</p>
+                            <p>${data.results[2].original_name}</p>
                             </a>
                             </article>
                             <article>
                             <a href='sinopsisSerie.html?id=${data.results[3].id}'>
                             <img src="${urlImgReco + data.results[3].poster_path}">
-                            <p>Nombre: ${data.results[3].original_name}</p>
+                            <p>${data.results[3].original_name}</p>
                             </a>
                             </article>
                             </section>`
