@@ -25,7 +25,7 @@ fetch(urlGeneroPeli)
             if (listaId[index] == id) {
                 agregar = true
             }
-            
+                         
         }
        if (agregar == true) {
         let popular = data.results[i]
