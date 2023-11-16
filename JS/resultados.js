@@ -23,6 +23,7 @@ fetch(apiPeli)
             container.innerHTML = `<div class="textoResult">Estos son los títulos de películas que coinciden con tu búsqueda de <strong>"${buscamos}"</strong>:</div>`;
             let peliculas = '';
             data.results.forEach(movie => {
+                //como crear una clase distinta para que las peliculas no se muestren pegadas al texto y comiencen desde abajo.
                 peliculas += `<article>
                                     <a href='sinopsisPelicula.html?id=${movie.id}'>
                                         <img src=${"https://image.tmdb.org/t/p/w300/" + movie.poster_path} alt='' />

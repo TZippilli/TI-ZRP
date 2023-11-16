@@ -6,7 +6,7 @@ let id = StringToObject.get('id');
 let genreName = StringToObject.get("name");
 let generoBuscadoDom = document.querySelector("#generoBuscado")
 generoBuscadoDom.innerText = genreName
-// // Obtener la lista de géneros
+// // Obtener la lista de géneros peliculas
 let urlGeneros = `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=en-US`
 let urlGeneroPeli = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&with_genres=${id}&with_watch_monetization_types=flatrate`;
 let peliculas = document.querySelector('.pelis_genero')
@@ -49,6 +49,4 @@ fetch(urlGeneroPeli)
 )
 
 
-
-
-
+//agregar detalle genero de series, hy que hacer otro HTML?
