@@ -6,6 +6,7 @@ let id = StringToObject.get('id');
 let genreName = StringToObject.get("name");
 let generoBuscadoDom = document.querySelector("#generoBuscado")
 generoBuscadoDom.innerText = genreName
+
 // // Obtener la lista de géneros peliculas
 let urlGeneros = `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=en-US`
 let urlGeneroPeli = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&with_genres=${id}&with_watch_monetization_types=flatrate`;
@@ -49,4 +50,45 @@ fetch(urlGeneroPeli)
 )
 
 
-//agregar detalle genero de series, hy que hacer otro HTML?
+//agregar detalle genero de series
+
+let urlGeneros = `https://api.themoviedb.org/3/genre/tv/list?api_key=${apiKey}&language=en-US`
+let urlGeneroSerie = `https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&with_genres=${id}&with_watch_monetization_types=flatrate`;
+let series = document.querySelector('.series_genero')
+
+fetch(urlGeneroSerie)
+.then(function (response) {
+    return response.json()
+}
+)
+.then(function (dataSeries) {
+    console.log(dataSeries);
+    for (let i = 0; i < dataSeries.results.length; i++) {
+        let agregar = false;
+        let listaId = dataSeries.results[i].genre_ids;
+        for (let index = 0; index < listaId.length; index++) {
+            if (listaId[index] == id) {
+                agregar = true
+            }
+                         
+        }
+       if (agregar == true) {
+        let popularSerie = dataSeries.results[i]
+        series.innerHTML += ` <article class="seriesGenero"> 
+                                <a class="aclickeo" href="./sinopsisSerie.html?idSerie=${popularSerie.id}">
+                                <img src="https://image.tmdb.org/t/p/w500/${popularSerie.poster_path}" alt="" class="img1">
+                                <p>${popularSerie.title}</p> 
+                                <p>${popularSerie.release_date}</p>
+                                </a>
+                                </article>
+                                 `
+       }
+    }
+    return dataSeries;
+}
+)
+.catch(function (error) {
+    console.log(error);
+    return error;
+}
+)
