@@ -1,5 +1,4 @@
-// Mostrar el loader antes de hacer la búsqueda
-document.getElementById('loader').classList.remove('hidden');
+
 
 let consulta = location.search;
 let stringToObject = new URLSearchParams(consulta);
@@ -13,8 +12,6 @@ fetch(apiPeli)
     .then(data => {
         console.log(data);
 
-        // ocultar el loader después de cargar los resultados
-        document.getElementById('loader').classList.add('oculto');
 
         let container = document.querySelector('.resultsContainer');
         if (data.results.length === 0) {
@@ -36,7 +33,5 @@ fetch(apiPeli)
     })
     .catch(error => {
         console.error('Error:', error);
-
-        // oculta el loader si hay un error
-        document.getElementById('loader').classList.add('oculto');
     });
+
