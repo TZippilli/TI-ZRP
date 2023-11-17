@@ -31,7 +31,7 @@ fetch(urlGeneroPeli)
        if (agregar == true) {
         let popular = data.results[i]
         peliculas.innerHTML += ` <article class="peliculasGenero"> 
-                                <a class="aclickeo" href="./sinopsisPelicula.html?idPelicula=${popular.id}">
+                                <a class="aclickeo" href="./sinopsisPelicula.html?id=${popular.id}">
                                 <img src="https://image.tmdb.org/t/p/w500/${popular.poster_path}" alt="" class="img1">
                                 <p>${popular.title}</p> 
                                 <p>${popular.release_date}</p>
