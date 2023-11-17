@@ -6,17 +6,14 @@ let id = StringToObject.get('id');
 let genreName = StringToObject.get("name");
 let generoBuscadoDom = document.querySelector("#generoBuscado")
 generoBuscadoDom.innerText = genreName
-let genreType = StringToObject.get("tipo");
-let tipoBuscadoDom = document.querySelector("#tipoBuscado")
-tipoBuscadoDom.innerText = genreType
+let tipo = StringToObject.get("tipo");
 
 
 // // Obtener la lista de géneros peliculas
-let urlGeneros = `https://api.themoviedb.org/3/genre/${tipo}/list?api_key=${apiKey}&language=en-US`
-let urlGeneroPeli = `https://api.themoviedb.org/3/discover/${tipo}?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&with_genres=${id}&with_watch_monetization_types=flatrate`;
+let urlPorGenero = `https://api.themoviedb.org/3/discover/${tipo}?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&with_genres=${id}&with_watch_monetization_types=flatrate`;
 let peliculas = document.querySelector('.pelis_genero')
 
-fetch(urlGeneroPeli)
+fetch(urlPorGenero)
 .then(function (response) {
     return response.json()
 }
@@ -34,14 +31,27 @@ fetch(urlGeneroPeli)
         }
        if (agregar == true) {
         let popular = data.results[i]
-        peliculas.innerHTML += ` <article class="peliculasGenero"> 
-                                <a class="aclickeo" href="./sinopsisPelicula.html?id=${popular.id}">
-                                <img src="https://image.tmdb.org/t/p/w500/${popular.poster_path}" alt="" class="img1">
-                                <p>${popular.title}</p> 
-                                <p>${popular.release_date}</p>
-                                </a>
-                                </article>
-                                 `
+        if(tipo === "movie"){
+
+            peliculas.innerHTML += ` <article class="peliculasGenero"> 
+            <a class="aclickeo" href="./sinopsisPelicula.html?id=${popular.id}">
+            <img src="https://image.tmdb.org/t/p/w500/${popular.poster_path}" alt="" class="img1">
+            <p>${popular.title}</p> 
+            <p>${popular.release_date}</p>
+            </a>
+            </article>
+            `
+        }else{
+
+            peliculas.innerHTML += ` <article class="peliculasGenero"> 
+            <a class="aclickeo" href="./sinopsisSerie.html?id=${popular.id}">
+            <img src="https://image.tmdb.org/t/p/w500/${popular.poster_path}" alt="" class="img1">
+            <p>${popular.name}</p> 
+            <p>${popular.first_air_date}</p>
+            </a>
+            </article>
+            `
+        }
        }
     }
     return data;
