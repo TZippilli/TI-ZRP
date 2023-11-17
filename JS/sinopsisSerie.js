@@ -79,7 +79,7 @@ fetch(urlTrailer)
 
 
 
-//recomendaciones
+//recomendaciones series
 let urlRecomendacionesSerie = `https://api.themoviedb.org/3/tv/${id}/recommendations?api_key=f216cd46b728d209895b1387e51e9182&language=en-US&page=1`
 fetch(urlRecomendacionesSerie)
     .then(function (response) {

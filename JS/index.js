@@ -1,3 +1,4 @@
+
 let apiKey = 'f216cd46b728d209895b1387e51e9182';
 
 let query = location.search;

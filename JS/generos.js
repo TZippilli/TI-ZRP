@@ -11,7 +11,7 @@ fetch(urlGeneros)
         let titulosGeneros ='';
         for (let i=0; i<datos.length; i++){
             titulosGeneros += `<article class="${datos[i].name}">
-                                    <a href='sinopsisGenero.html?id=${datos[i].id}&name=${data.genres[i].name}'>
+                                    <a href='sinopsisGenero.html?id=${datos[i].id}&name=${data.genres[i].name}&tipo=movie'>
                                         <h2>${datos[i].name}</h2>
                                     </a>
                                 </article>`
@@ -36,7 +36,7 @@ fetch(urlGeneros)
             let titulosGenerosSeries ='';
             for (let i=0; i<datos.length; i++){
                 titulosGenerosSeries += `<article class="${datos[i].name}">
-                                        <a href='sinopsisGenero.html?id=${datos[i].id}&name=${data.genres[i].name}'>
+                                        <a href='sinopsisGenero.html?id=${datos[i].id}&name=${data.genres[i].name}&tipo=tv'>
                                             <h2>${datos[i].name}</h2>
                                         </a>
                                     </article>`
@@ -47,4 +47,3 @@ fetch(urlGeneros)
         .catch(function(error){
             console.log(error);
         })
-    

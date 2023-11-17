@@ -1,5 +1,3 @@
-
-
 let consulta = location.search;
 let stringToObject = new URLSearchParams(consulta);
 let buscamos = stringToObject.get('query');
@@ -34,4 +32,3 @@ fetch(apiPeli)
     .catch(error => {
         console.error('Error:', error);
     });
-
