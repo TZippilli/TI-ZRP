@@ -437,9 +437,38 @@ a:active {
 }
 
 
+.inputBusqueda {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
 
+.boton_busqueda {
+    padding: 5px 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
+
+.boton_busqueda:hover {
+    background-color: #2980b9;
+}
+
+
+.buscador form {
+    display: flex;
+    align-items: center;
+}
+
+/* Opcional: Ajustes para la posición del botón dentro del formulario */
+.boton_busqueda {
+    margin-left: 5px;
+}
 
 /* responsive */
 @media (max-width: 420px) {

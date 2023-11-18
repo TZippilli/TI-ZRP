@@ -4,7 +4,7 @@ let apiKey = 'f216cd46b728d209895b1387e51e9182';
 let query = location.search;
 let StringToObject = new URLSearchParams(query);
 let id = StringToObject.get('id');
-
+alert ("Bienvenido a PANDAFILM, espero que disfrutes nuestro contenido!")
 // agrego peliculas al index
 let urlPelis = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`
 

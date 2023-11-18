@@ -34,7 +34,9 @@ fetch(urlSerie)
         for (let i = 0; i < data.genres.length; i++) {
             generos.innerHTML += `| <a href='sinopsisGenero.html?id=${data.genres[i].id}&name=${data.genres[i].name}&tipo=tv'>
                                                         ${data.genres[i].name}
-                                                        | </a>  `}
+                                                        | </a>  `
+        }
+
     })
     .catch(function (error) {
         console.log(error);
